@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="com.obiscr.chatgpt.settings.EasyCodeState">
+    <option name="projectFiles" value="$PROJECT_DIR$/src/main/java/com/example/app/controller/ThongTinSVController.java;D:/DULIEUODMAYDELL/Spring/initial-spring-mvc-full-config-3-2025/src/main/java/com/example/app/dto/request/ThongTinSinhVienRequest.java;D:/DULIEUODMAYDELL/Spring/initial-spring-mvc-full-config-3-2025/src/main/java/com/example/app/entity/CongViec.java;D:/DULIEUODMAYDELL/Spring/initial-spring-mvc-full-config-3-2025/src/main/java/com/example/app/entity/CongViecId.java;D:/DULIEUODMAYDELL/Spring/initial-spring-mvc-full-config-3-2025/src/main/java/com/example/app/entity/Nganh.java;D:/DULIEUODMAYDELL/Spring/initial-spring-mvc-full-config-3-2025/src/main/java/com/example/app/entity/SinhVien.java;D:/DULIEUODMAYDELL/Spring/initial-spring-mvc-full-config-3-2025/src/main/java/com/example/app/entity/TotNghiep.java;D:/DULIEUODMAYDELL/Spring/initial-spring-mvc-full-config-3-2025/src/main/java/com/example/app/entity/TotNghiepId.java;D:/DULIEUODMAYDELL/Spring/initial-spring-mvc-full-config-3-2025/src/main/java/com/example/app/entity/Truong.java;D:/DULIEUODMAYDELL/Spring/initial-spring-mvc-full-config-3-2025/src/main/webapp/resources/css/style.css" />
+  </component>
+</project>

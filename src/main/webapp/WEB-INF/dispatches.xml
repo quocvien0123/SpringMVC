@@ -27,9 +27,9 @@
     <!-- DataSource -->
     <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/mvc_hibernate?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC" />
-        <property name="username" value="root" />
-        <property name="password" value="root" />
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/thongkevieclam?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC" />
+        <property name="username" value="sa" />
+        <property name="password" value="12345" />
         <!-- Connection Pool tối ưu -->
         <property name="maximumPoolSize" value="20" />
         <property name="minimumIdle" value="5" />
