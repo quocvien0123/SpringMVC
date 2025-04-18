@@ -8,13 +8,13 @@
     <title>Tìm kiếm sinh viên</title>
 </head>
 <body>
-    <div>
-        <div>
+    <div class="mb-3">
+        <div class="mb-3">
             <%--@elvariable id="keyword" type=""--%>
-            <form:form action="search-result" modelAttribute="keyword" method="get">
+            <form:form action="search-result" modelAttribute="keyword" method="get" >
                 <h3>Tìm kiếm thông tin sinh viên</h3>
-                <label>Nhập thông tin sinh viên: </label>
-                <form:input path="soCMND"></form:input>
+                <label class="form-label">Nhập thông tin sinh viên: </label>
+                <form:input path="soCMND" cssClass="form-control"></form:input>
                 <button type="submit">Tìm kiếm</button>
             </form:form>
         </div>
@@ -28,7 +28,7 @@
                     <th>Email</th>
                     <th>Địa chỉ</th>
                 </tr>
-                <c:forEach var="sv" items="${sinhVien}">
+                <c:forEach items="${sinhVien}" var="sv" >
                     <td>${sv.soCMND}</td>
                     <td>${sv.hoTen}</td>
                     <td>${sv.soDT}</td>

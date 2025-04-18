@@ -18,7 +18,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class SinhVienTotNghiepService {
     SinhVienRepositoty sinhVienRepositoty;
     TotNghiepRepository totNghiepRepository;
-//    AppMapper appMapper;
     NganhRepository nganhRepository;
     TruongRepository truongRepository;
 
@@ -35,13 +34,14 @@ public class SinhVienTotNghiepService {
         SinhVien sv = sinhVienRepositoty.findById(request.getSoCMND()).orElseThrow();
         Nganh nganh = nganhRepository.findById(request.getMaNganh()).orElseThrow();
         Truong truong = truongRepository.findById(request.getMaTruong()).orElseThrow();
-        TotNghiep totNghiep = new TotNghiep();
+
         TotNghiepId totNghiepId = new TotNghiepId(
                 sv.getSoCMND(),
                 nganh.getMaNganh(),
                 truong.getMaTruong()
         );
 
+        TotNghiep totNghiep = new TotNghiep();
         totNghiep.setId(totNghiepId);
         totNghiep.setSoCMND(sv);
         totNghiep.setMaTruong(truong);
