@@ -18,4 +18,8 @@ public class TotNghiepService {
     public List<TotNghiep> findBySoCMND(String soCMND){
         return totNghiepRepository.findBySoCMND(soCMND);
     }
+
+    public void delete(String soCMND){
+        totNghiepRepository.delete(totNghiepRepository.findBySoCMND(soCMND).get(0));
+    }
 }

@@ -105,7 +105,7 @@
 
 <div class="container">
     <%--@elvariable id="sinhVien" type=""--%>
-    <form:form action="add" method="POST" modelAttribute="sinhVien">
+    <form:form action="edit-complete" method="POST" modelAttribute="sinhVien">
         <h3>Thông tin sinh viên</h3>
 
         <c:if test="${not empty error}">
@@ -144,7 +144,7 @@
         </select>
 
         <label>Mã trường</label>
-        <input type="text" id="maTruongInput" name="maTruong" readonly>
+        <input type="text" id="maTruongInput" name="maTruong" >
 
         <label>Ngành</label>
         <select id="selectNganh">
@@ -156,7 +156,7 @@
         </select>
 
         <label>Mã ngành</label>
-        <input type="text" id="maNganhInput" name="maNganh" readonly>
+        <input type="text" id="maNganhInput" name="maNganh" >
 
         <form:label path="heTN" cssClass="form-label">Hệ tốt nghiệp</form:label>
         <form:input path="heTN"/>
@@ -171,48 +171,9 @@
         <form:errors path="loaiTN" cssClass="text-danger"/>
 
         <div class="form-actions">
-            <button type="submit" class="btn btn-success" style="font-size: 17px">Thêm sinh viên</button>
-            <a href="search" class="btn btn-primary">Tìm kiếm 1</a>
-            <a href="search-totnghiep-vieclam" class="btn btn-secondary">Tìm kiếm 2</a>
+            <button type="submit" class="btn btn-success" style="font-size: 17px">Sửa thông tin</button>
         </div>
     </form:form>
-    <table>
-        <tr>
-            <th>Số CMND</th>
-            <th>Họ tên</th>
-            <th>Email</th>
-            <th>SĐT</th>
-            <th>Địa chỉ</th>
-            <th>Mã trường</th>
-            <th>Mã ngành</th>
-            <th>Hệ tốt nghiệp</th>
-            <th>Ngày tốt nghiệp</th>
-            <th>Loại tốt nghiệp</th>
-            <th></th>
-        </tr>
-        <c:forEach items="${tableData}" var="td">
-           <tr>
-               <td>${td.soCMND}</td>
-               <td>${td.hoTen}</td>
-               <td>${td.soDT}</td>
-               <td>${td.email}</td>
-               <td>${td.diaChi}</td>
-               <td>${td.maTruong}</td>
-               <td>${td.maNganh}</td>
-               <td>${td.heTN}</td>
-               <td>${td.ngayTN}</td>
-               <td>${td.heTN}</td>
-               <td>
-                   <a href="edit?soCMND=${td.soCMND}">
-                       <button >Sửa</button>
-                   </a>
-                   <a href="">
-                       <button>Xóa</button>
-                   </a>
-               </td>
-           </tr>
-        </c:forEach>
-    </table>
 </div>
 
 

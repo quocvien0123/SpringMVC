@@ -25,15 +25,20 @@ public class TotNghiepViecLamService {
         System.out.println(soCMND);
         TotNghiepViecLamDTO totNghiepViecLamDTO = new TotNghiepViecLamDTO();
         Optional<SinhVien> sinhVien = sinhVienService.findById(soCMND);
-        List<CongViec> congViec = congViecService.findBySoCMND(soCMND);
-        List<TotNghiep> totNghiep = totNghiepService.findBySoCMND(soCMND);
-        totNghiepViecLamDTO.setSoCMND(soCMND);
-        totNghiepViecLamDTO.setHoTen(sinhVien.get().getSoCMND());
-        totNghiepViecLamDTO.setHoTen(sinhVien.get().getHoTen());
-        totNghiepViecLamDTO.setMaNganh(totNghiep.get(0).getMaNghanh().getMaNganh());
-        totNghiepViecLamDTO.setMaTruong(totNghiep.get(0).getMaTruong().getMaTruong());
-        totNghiepViecLamDTO.setTenCongTy(congViec.get(0).getTenCongTy());
-        totNghiepViecLamDTO.setThoiGianLamViec(congViec.get(0).getThoiGianLamViec());
+        if (sinhVien.isPresent()) {
+            List<CongViec> congViec = congViecService.findBySoCMND(soCMND);
+            List<TotNghiep> totNghiep = totNghiepService.findBySoCMND(soCMND);
+            totNghiepViecLamDTO.setSoCMND(soCMND);
+            totNghiepViecLamDTO.setHoTen(sinhVien.get().getSoCMND());
+            totNghiepViecLamDTO.setHoTen(sinhVien.get().getHoTen());
+            totNghiepViecLamDTO.setMaNganh(totNghiep.get(0).getMaNghanh().getMaNganh());
+            totNghiepViecLamDTO.setMaTruong(totNghiep.get(0).getMaTruong().getMaTruong());
+            totNghiepViecLamDTO.setTenCongTy(congViec.get(0).getTenCongTy());
+            totNghiepViecLamDTO.setThoiGianLamViec(congViec.get(0).getThoiGianLamViec());
+        } else {
+            return null;
+        }
+
         return totNghiepViecLamDTO;
     }
 

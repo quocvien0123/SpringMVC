@@ -12,6 +12,10 @@ import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @FieldDefaults(level = AccessLevel.PRIVATE,makeFinal = true)
 @RequiredArgsConstructor
@@ -50,5 +54,41 @@ public class SinhVienTotNghiepService {
         totNghiep.setNgayTN(request.getNgayTN());
         totNghiep.setLoaiTN(request.getLoaiTN());
         totNghiepRepository.save(totNghiep);
+    }
+
+    public List<ThongTinSinhVienRequest> getData(){
+        List<ThongTinSinhVienRequest> data = new ArrayList<>();
+        List<SinhVien> sinhViens = sinhVienRepositoty.findAll();
+        for (SinhVien sv : sinhViens){
+            ThongTinSinhVienRequest dto = new ThongTinSinhVienRequest();
+            List<TotNghiep> totNghiep = totNghiepRepository.findBySoCMND(sv.getSoCMND());
+            dto.setSoCMND(sv.getSoCMND());
+            dto.setHoTen(sv.getHoTen());
+            dto.setEmail(sv.getEmail());
+            dto.setSoDT(sv.getSoDT());
+            dto.setDiaChi(sv.getDiaChi());
+            dto.setMaTruong(totNghiep.get(0).getMaTruong().getMaTruong());
+            dto.setMaNganh(totNghiep.get(0).getMaNghanh().getMaNganh());
+            dto.setHeTN(totNghiep.get(0).getHeTN());
+            dto.setNgayTN(totNghiep.get(0).getNgayTN());
+            dto.setLoaiTN(totNghiep.get(0).getLoaiTN());
+            data.add(dto);
+        }
+        return data;
+    }
+
+    public ThongTinSinhVienRequest dataEdit(Optional<SinhVien> sv, List<TotNghiep> tn){
+        ThongTinSinhVienRequest data = new ThongTinSinhVienRequest();
+        data.setSoCMND(sv.get().getSoCMND());
+        data.setHoTen(sv.get().getHoTen());
+        data.setEmail(sv.get().getEmail());
+        data.setDiaChi(sv.get().getDiaChi());
+        data.setSoDT(sv.get().getSoDT());
+        data.setMaNganh(tn.get(0).getMaNghanh().getMaNganh());
+        data.setMaTruong(tn.get(0).getMaTruong().getMaTruong());
+        data.setHeTN(tn.get(0).getHeTN());
+        data.setNgayTN(tn.get(0).getNgayTN());
+        data.setLoaiTN(tn.get(0).getLoaiTN());
+        return data;
     }
 }
