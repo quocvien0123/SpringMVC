@@ -88,8 +88,11 @@
     <button type="submit">Thêm</button>
 
 </form:form>
-<a href="./search">
-    <button> Tìm kiếm</button>
+<a href="search">
+    <button> Tìm kiếm 1</button>
+</a>
+<a href="search-totnghiep-vieclam">
+    <button> Tìm kiếm 2</button>
 </a>
 <script>
     // Trường
